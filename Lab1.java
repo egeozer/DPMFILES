@@ -16,13 +16,12 @@ public class Lab1 {
 
 // Parameters: adjust these for desired performance
 
-	private static final int bandCenter = 30;			// Offset from the wall (cm)
-	private static final int bandWidth = 3;				// Width of dead band (cm)
-	private static final int motorLow = 295;			// Speed of slower rotating wheel (deg/sec)
-	private static final int motorHigh = 300;			// Speed of the faster rotating wheel (deg/sec)
+	private static final int bandCenter = 35;			// Offset from the wall (cm)
+	private static final int bandWidth = 2;				// Width of dead band (cm)
+	private static final int motorLow = 225;			// Speed of slower rotating wheel (deg/sec)
+	private static final int motorHigh = 250;			// Speed of the faster rotating wheel (deg/sec)
 	
 // Static Resources:
-//
 // Ultrasonic sensor connected to input port S1
 // Left motor connected to output A
 // Right motor connected to output B
@@ -42,8 +41,7 @@ public class Lab1 {
 		
 		// Setup controller objects
 		
-		BangBangController bangbang = new BangBangController(leftMotor, rightMotor,
-															 bandCenter, bandWidth, motorLow, motorHigh);
+		BangBangController bangbang = new BangBangController(leftMotor, rightMotor, bandCenter, bandWidth, motorLow, motorHigh);
 		PController p = new PController(leftMotor, rightMotor, bandCenter, bandWidth);
 		
 		// Setup ultrasonic sensor
